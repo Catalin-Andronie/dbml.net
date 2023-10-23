@@ -10,7 +10,7 @@
     <PackageVersion Include="AsyncFixer" Version="1.6.0" PrivateAssets="all" /> 
     <PackageVersion Include="Meziantou.Analyzer" Version="2.0.85" PrivateAssets="all" />
     <PackageVersion Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.7.30" PrivateAssets="all" />
-    <PackageVersion Include="Roslynator.Analyzers" Version="4.5.0" PrivateAssets="all" />
+    <PackageVersion Include="Roslynator.Analyzers" Version="4.6.0" PrivateAssets="all" />
     <PackageVersion Include="Roslynator.CodeAnalysis.Analyzers" Version="4.6.0" PrivateAssets="all" />
     <PackageVersion Include="Roslynator.Formatting.Analyzers" Version="4.6.0" PrivateAssets="all" />
     <PackageVersion Include="SonarAnalyzer.CSharp" Version="9.12.0.78982" PrivateAssets="all" />
