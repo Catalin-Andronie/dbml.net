@@ -55,3 +55,27 @@ jobs:
 
       - name: Upload code coverage reports
         run: dotnet cake --task=upload-code-coverage-reports --exclusive
+
+      - name: Code Coverage Report for Github
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: artifacts/tests/**/coverage.cobertura.xml
+          badge: true
+          fail_below_min: true
+          format: markdown
+          hide_branch_rate: false
+          hide_complexity: false
+          indicators: true
+          output: both
+          thresholds: '60 80'
+
+      - name: Find the PR associated with this push
+        uses: jwalton/gh-find-current-pr@v1
+        id: findPr
+
+      - name: Add Coverage PR Comment on Github
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          recreate: true
+          number: ${{ steps.findPr.outputs.pr }}
+          path: code-coverage-results.md
