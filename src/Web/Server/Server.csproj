@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <ProjectName>DbmlNet.Web.Server</ProjectName>
+    <RootNamespace>DbmlNet.Web.Server</RootNamespace>
+    <AssemblyName>DbmlNet.Web.Server</AssemblyName>
+
+    <IsPackable>false</IsPackable>
+    <DocumentationFile>../../../assets/$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+  </ItemGroup>
+
+</Project>
