@@ -37,5 +37,18 @@
             <param name="cancellationToken">The cancellation token.</param>
             <returns>The weather forecasts.</returns>
         </member>
+        <member name="T:DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQueryValidator">
+            <summary>
+            Represents a validator for <see cref="T:DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQuery"/>.
+            </summary>
+        </member>
+        <member name="M:DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQueryValidator.ValidateAsync(DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQuery)">
+            <summary>
+            Validates the specified command.
+            </summary>
+            <param name="command">The command.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exception cref="T:DbmlNet.Web.Application.Common.ApplicationValidationException">The validation failed.</exception>
+        </member>
     </members>
 </doc>

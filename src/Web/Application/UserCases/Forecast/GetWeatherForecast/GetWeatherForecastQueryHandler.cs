@@ -5,8 +5,6 @@ using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 
-using DbmlNet.Web.Application.Common;
-
 namespace DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast;
 
 public sealed class GetWeatherForecastQueryHandler
@@ -26,7 +24,7 @@ public sealed class GetWeatherForecastQueryHandler
         GetWeatherForecastQuery command,
         CancellationToken cancellationToken = default)
     {
-        await ValidateAsync(command).ConfigureAwait(false);
+        await new GetWeatherForecastQueryValidator().ValidateAsync(command).ConfigureAwait(false);
 
         ArgumentNullException.ThrowIfNull(command);
 
@@ -38,28 +36,5 @@ public sealed class GetWeatherForecastQueryHandler
                 TemperatureC = RandomNumberGenerator.GetInt32(-20, 55),
                 Summary = _summaries[RandomNumberGenerator.GetInt32(_summaries.Length)]
             }).ToArray();
-    }
-
-    private static Task ValidateAsync(GetWeatherForecastQuery command)
-    {
-        ArgumentNullException.ThrowIfNull(command);
-
-        List<ValidationError> failures = new List<ValidationError>();
-
-        if (command.NumberOfDays < 1)
-        {
-            failures.Add(new ValidationError
-            {
-                PropertyName = nameof(command.NumberOfDays),
-                ErrorMessage = "The number of days cannot be less than 1."
-            });
-        }
-
-        if (failures.Count != 0)
-        {
-            throw new ApplicationValidationException(failures);
-        }
-
-        return Task.CompletedTask;
     }
 }
