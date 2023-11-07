@@ -1,31 +1,33 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
+using System.Threading;
+using System.Threading.Tasks;
+
+using DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast;
 
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Server.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/v1/weather-forecast")]
 public class WeatherForecastController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
     [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    public Task<IEnumerable<WeatherForecast>> GetWeatherForecastAsync(
+        CancellationToken cancellationToken = default)
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        {
-            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            TemperatureC = RandomNumberGenerator.GetInt32(-20, 55),
-            Summary = Summaries[RandomNumberGenerator.GetInt32(Summaries.Length)]
-        })
-        .ToArray();
+        GetWeatherForecastQuery command = new GetWeatherForecastQuery(numberOfDays: 5);
+        GetWeatherForecastQueryHandler handler = new GetWeatherForecastQueryHandler();
+        return handler.HandleAsync(command, cancellationToken);
+    }
+
+    [HttpGet("{numberOfDays}", Name = "GetWeatherForecastByDays")]
+    public Task<IEnumerable<WeatherForecast>> GetWeatherForecastByDaysAsync(
+        int numberOfDays,
+        CancellationToken cancellationToken = default)
+    {
+        GetWeatherForecastQuery command = new GetWeatherForecastQuery(numberOfDays);
+        GetWeatherForecastQueryHandler handler = new GetWeatherForecastQueryHandler();
+        return handler.HandleAsync(command, cancellationToken);
     }
 }

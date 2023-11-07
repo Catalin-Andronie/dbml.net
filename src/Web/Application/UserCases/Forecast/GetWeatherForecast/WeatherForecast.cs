@@ -1,6 +1,6 @@
 using System;
 
-namespace Server;
+namespace DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast;
 
 public sealed class WeatherForecast
 {
