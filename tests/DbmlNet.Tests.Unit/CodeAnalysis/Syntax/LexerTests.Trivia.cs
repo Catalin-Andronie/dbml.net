@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using DbmlNet.CodeAnalysis;
 using DbmlNet.CodeAnalysis.Syntax;
 using DbmlNet.CodeAnalysis.Text;
+using DbmlNet.Tests.Core;
 
 using Xunit;
 

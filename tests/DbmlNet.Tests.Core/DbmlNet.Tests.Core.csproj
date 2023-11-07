@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>DbmlNet.Tests.Core</RootNamespace>
+    <AssemblyName>DbmlNet.Tests.Core</AssemblyName>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>false</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DbmlNet\DbmlNet.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Tynamix.ObjectFiller" />
+  </ItemGroup>
+
+</Project>

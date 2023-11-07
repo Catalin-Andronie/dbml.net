@@ -8,9 +8,9 @@ using DbmlNet.CodeAnalysis.Syntax;
 
 using Tynamix.ObjectFiller;
 
-namespace DbmlNet.Tests.Unit;
+namespace DbmlNet.Tests.Core;
 
-internal static class DataGenerator
+public static class DataGenerator
 {
     /// <summary>
     /// Generates a random number between min and max.
@@ -123,6 +123,7 @@ internal static class DataGenerator
         "image",
     };
 
+#pragma warning disable CA1021 // Avoid out parameters
     /// <summary>
     /// Gets a random keyword kind, text, and its value.
     /// </summary>
@@ -145,6 +146,7 @@ internal static class DataGenerator
         keywordText = keywordKind.GetKnownText() ?? string.Empty;
         keywordValue = keywordKind.GetKnownValue();
     }
+#pragma warning restore CA1021 // Avoid out parameters
 
     /// <summary>
     /// Gets a list of all available syntax keywords.

@@ -1,4 +1,5 @@
 using DbmlNet.CodeAnalysis.Text;
+using DbmlNet.Tests.Core;
 
 using Xunit;
 
