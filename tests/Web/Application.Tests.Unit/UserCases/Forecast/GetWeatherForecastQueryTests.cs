@@ -27,4 +27,21 @@ public sealed class GetWeatherForecastQueryTests
 
         Assert.Equal("One or more validation failures have occurred.", ex.Message);
     }
+
+    [Fact]
+    public async Task GetWeatherForecastQuery_Should_RequireNumberOfDays()
+    {
+        int numberOfDays = DataGenerator.GetRandomNumber(max: 0);
+        GetWeatherForecastQuery query = new GetWeatherForecastQuery(numberOfDays);
+        GetWeatherForecastQueryHandler handler = new GetWeatherForecastQueryHandler();
+        ApplicationValidationException ex =
+            await Assert
+                .ThrowsAsync<ApplicationValidationException>(() => handler.HandleAsync(query))
+                .ConfigureAwait(true);
+
+        KeyValuePair<string, string[]> error = Assert.Single(ex.Errors);
+        Assert.Equal("NumberOfDays", error.Key);
+        string errorMessage = Assert.Single(error.Value);
+        Assert.Equal("The number of days cannot be less than 1.", errorMessage);
+    }
 }
