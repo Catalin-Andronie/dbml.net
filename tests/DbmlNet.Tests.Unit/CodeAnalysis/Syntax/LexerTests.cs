@@ -5,6 +5,7 @@ using System.Linq;
 
 using DbmlNet.CodeAnalysis;
 using DbmlNet.CodeAnalysis.Syntax;
+using DbmlNet.Tests.Core;
 
 using Xunit;
 

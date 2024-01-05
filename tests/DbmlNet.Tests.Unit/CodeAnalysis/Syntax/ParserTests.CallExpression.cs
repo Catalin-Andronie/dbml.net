@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using DbmlNet.CodeAnalysis.Syntax;
+using DbmlNet.Tests.Core;
 
 using Xunit;
 

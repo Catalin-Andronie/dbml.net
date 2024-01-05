@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ProjectName>DbmlNet.Web.Infrastructure</ProjectName>
+    <RootNamespace>DbmlNet.Web.Infrastructure</RootNamespace>
+    <AssemblyName>DbmlNet.Web.Infrastructure</AssemblyName>
+
+    <IsPackable>false</IsPackable>
+    <DocumentationFile>../../../assets/$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+  </ItemGroup>
+
+</Project>

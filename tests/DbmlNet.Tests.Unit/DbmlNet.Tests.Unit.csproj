@@ -9,13 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DbmlNet.Tests.Core\DbmlNet.Tests.Core.csproj" />
     <ProjectReference Include="..\..\src\DbmlNet\DbmlNet.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
-    <PackageReference Include="Tynamix.ObjectFiller" />
     <PackageReference Include="xunit.runner.visualstudio" />
     <PackageReference Include="xunit" />
   </ItemGroup>

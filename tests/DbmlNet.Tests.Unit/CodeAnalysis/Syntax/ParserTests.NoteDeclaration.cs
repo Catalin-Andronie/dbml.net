@@ -1,5 +1,7 @@
 using DbmlNet.CodeAnalysis.Syntax;
 
+using DbmlNet.Tests.Core;
+
 using Xunit;
 
 namespace DbmlNet.Tests.Unit.CodeAnalysis.Syntax;

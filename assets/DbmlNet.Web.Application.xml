@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DbmlNet.Web.Application</name>
+    </assembly>
+    <members>
+        <member name="T:DbmlNet.Web.Application.Common.ValidationError">
+            <summary>
+            Represents a validation error.
+            </summary>
+        </member>
+        <member name="P:DbmlNet.Web.Application.Common.ValidationError.PropertyName">
+            <summary>
+            Gets the property name.
+            </summary>
+        </member>
+        <member name="P:DbmlNet.Web.Application.Common.ValidationError.ErrorMessage">
+            <summary>
+            Gets the error message.
+            </summary>
+        </member>
+        <member name="T:DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQuery">
+            <summary>
+            Represents a query to get weather forecasts.
+            </summary>
+        </member>
+        <member name="P:DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQuery.NumberOfDays">
+            <summary>
+            Gets the number of days.
+            </summary>
+        </member>
+        <member name="M:DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQueryHandler.HandleAsync(DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQuery,System.Threading.CancellationToken)">
+            <summary>
+            Get weather forecasts.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The weather forecasts.</returns>
+        </member>
+        <member name="T:DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQueryValidator">
+            <summary>
+            Represents a validator for <see cref="T:DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQuery"/>.
+            </summary>
+        </member>
+        <member name="M:DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQueryValidator.ValidateAsync(DbmlNet.Web.Application.UserCases.Forecast.GetWeatherForecast.GetWeatherForecastQuery)">
+            <summary>
+            Validates the specified command.
+            </summary>
+            <param name="command">The command.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exception cref="T:DbmlNet.Web.Application.Common.ApplicationValidationException">The validation failed.</exception>
+        </member>
+    </members>
+</doc>

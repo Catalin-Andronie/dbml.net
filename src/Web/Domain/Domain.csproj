@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ProjectName>DbmlNet.Web.Domain</ProjectName>
+    <RootNamespace>DbmlNet.Web.Domain</RootNamespace>
+    <AssemblyName>DbmlNet.Web.Domain</AssemblyName>
+
+    <IsPackable>false</IsPackable>
+    <DocumentationFile>../../../assets/$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

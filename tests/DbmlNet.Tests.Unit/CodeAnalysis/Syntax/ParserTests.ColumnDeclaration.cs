@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 
 using DbmlNet.CodeAnalysis.Syntax;
+using DbmlNet.Tests.Core;
 
 using Xunit;
 
@@ -233,7 +234,7 @@ public partial class ParserTests
 
     public static IEnumerable<object?[]> GetSqlServerColumnTypeIdentifiersData()
     {
-        foreach (string text in SqlServerDataTypes)
+        foreach (string text in DataGenerator.SqlServerDataTypes)
         {
             // Skip parenthesized identifiers
             if (text.Contains('(', StringComparison.Ordinal))
@@ -276,7 +277,7 @@ public partial class ParserTests
 
     public static IEnumerable<object?[]> GetSqlServerColumnTypeParenthesizedIdentifiersData()
     {
-        foreach (string text in SqlServerDataTypes)
+        foreach (string text in DataGenerator.SqlServerDataTypes)
         {
             // Skip non parenthesized identifiers
             if (!text.Contains('(', StringComparison.Ordinal))

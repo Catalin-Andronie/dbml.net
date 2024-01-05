@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 
 using DbmlNet.CodeAnalysis;
+using DbmlNet.Tests.Core;
 
 using Xunit;
 
