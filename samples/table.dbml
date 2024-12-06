@@ -1,0 +1,13 @@
+Table users {
+  id integer
+  username varchar
+  role varchar
+  created_at timestamp
+}
+
+Table users2 {
+  id integer
+  username varchar
+  role varchar
+  created_at timestamp
+}

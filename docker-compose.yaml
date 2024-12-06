@@ -1,0 +1,9 @@
+services:
+  dbnet-database:
+    container_name: dbnet-database
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "55555:1433"
+    environment:
+      MSSQL_SA_PASSWORD: "MyStrongPassword12!@"
+      ACCEPT_EULA: "Y"
